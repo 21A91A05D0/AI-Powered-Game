@@ -20,7 +20,7 @@ def get_together_api_key():
      return together_api_key
 
 def get_game_state(inventory={}):
-    world = load_world('D:\DLprojects\AIpoweredgame\L1\MyWorld_L1.json')
+    world = load_world('D:\DLprojects\AIpoweredgame\AI-Powered-Game\L1\MyWorld_L1.json')
     kingdom = world['kingdoms']['Eldrida']
     town = kingdom['towns']["Luminaria"]
     character = town['npcs']['Kaida Blackwood']
