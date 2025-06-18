@@ -77,7 +77,7 @@ def detect_inventory_changes(game_state, output):
     ]
     chat_completion = client.chat.completions.create(
         # response_format={"type": "json_object", "schema": InventoryUpdate.model_json_schema()},
-        model="meta-llama/Llama-3-70b-chat-hf",
+        model="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
         temperature=0.0,
         messages=messages
     )
@@ -168,7 +168,7 @@ Inventory: {json.dumps(game_state['inventory'])}"""
     messages.append({"role": "user", "content": message})
     client = Together(api_key=get_together_api_key())
     model_output = client.chat.completions.create(
-        model="meta-llama/Llama-3-70b-chat-hf",
+        model="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
         messages=messages
     )
     
