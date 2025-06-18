@@ -137,8 +137,8 @@ def is_safe(message):
     
     client = Together(api_key=get_together_api_key())
 
-    response = client.completions.create(
-        model="Meta-Llama/LlamaGuard-2-8b",
+    response = client.chat.completions.create(
+        model="meta-llama/Llama-3-70b-chat-hf",
         prompt=prompt,
     )
     result = response.choices[0].text
