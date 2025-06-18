@@ -67,7 +67,7 @@ Your Character:  {game_state['character']}"""
     messages.append({"role": "user", "content": message})
     client = Together(api_key=get_together_api_key())
     model_output = client.chat.completions.create(
-        model="meta-llama/Llama-3-70b-chat-hf",
+        model="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
         messages=messages
     )
     
@@ -138,7 +138,7 @@ def is_safe(message):
     client = Together(api_key=get_together_api_key())
 
     response = client.chat.completions.create(
-        model="meta-llama/Llama-3-70b-chat-hf",
+        model="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
         prompt=prompt,
     )
     result = response.choices[0].text
