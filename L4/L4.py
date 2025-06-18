@@ -82,8 +82,14 @@ def detect_inventory_changes(game_state, output):
         messages=messages
     )
     response = chat_completion.choices[0].message.content
-    result = json.loads(response)
-    return result['itemUpdates']
+    print("AI Response:", repr(response))  # Debug output
+
+    try:
+        result = json.loads(response)
+        return result.get("itemUpdates", [])
+    except json.JSONDecodeError:
+        print("Failed to parse JSON. Raw response:", response)
+        return []
 
 
 # In[6]:
